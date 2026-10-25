@@ -1,1 +1,128 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VentaFácil - Sistema de ventas</title><link rel="stylesheet" href="style.css"></head><body><header><h1>VentaFácil</h1><p>Sistema de ventas · Prototipo con datos ficticios</p></header><nav><a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#clientes">Clientes</a><a href="#ventas">Ventas</a></nav><main><section id="inicio"><h2>Bienvenido a VentaFácil</h2><p>Desarrollar un sistema que registre ventas, clientes y productos de forma rápida y confiable.</p><div class="cards"><div class="card"><b>C$ 8,000</b>Ventas hoy</div><div class="card"><b>63</b>Productos</div><div class="card"><b>3</b>Clientes</div></div></section><section id="productos"><h2>Productos</h2><table><tr><th>Código</th><th>Producto</th><th>Precio</th><th>Stock</th></tr><tr><td>001</td><td>Taladro</td><td>C$ 2,500</td><td>8</td></tr><tr><td>002</td><td>Martillo</td><td>C$ 350</td><td>15</td></tr><tr><td>003</td><td>Cinta métrica</td><td>C$ 120</td><td>40</td></tr></table><h3>Nuevo registro</h3><form onsubmit="return false"><input placeholder="Código"><input placeholder="Producto"><input placeholder="Precio"><input placeholder="Stock"><button>Guardar</button></form></section><section id="clientes"><h2>Clientes</h2><table><tr><th>ID</th><th>Cliente</th><th>Teléfono</th><th>Compras</th></tr><tr><td>C01</td><td>Ana Pérez</td><td>8888-1111</td><td>5</td></tr><tr><td>C02</td><td>Luis Mora</td><td>8777-2222</td><td>2</td></tr><tr><td>C03</td><td>Ferretería Sol</td><td>2222-3333</td><td>12</td></tr></table><h3>Nuevo registro</h3><form onsubmit="return false"><input placeholder="ID"><input placeholder="Cliente"><input placeholder="Teléfono"><input placeholder="Compras"><button>Guardar</button></form></section><section id="ventas"><h2>Ventas</h2><table><tr><th>Factura</th><th>Fecha</th><th>Cliente</th><th>Total</th></tr><tr><td>F-001</td><td>2026-10-20</td><td>Ana Pérez</td><td>C$ 2,850</td></tr><tr><td>F-002</td><td>2026-10-21</td><td>Luis Mora</td><td>C$ 350</td></tr><tr><td>F-003</td><td>2026-10-22</td><td>Ferretería Sol</td><td>C$ 4,800</td></tr></table><h3>Nuevo registro</h3><form onsubmit="return false"><input placeholder="Factura"><input placeholder="Fecha"><input placeholder="Cliente"><input placeholder="Total"><button>Guardar</button></form></section></main><footer>Prototipo demostrativo - Ciclo de vida de un proyecto informático</footer></body></html>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VentaFácil - Sistema de ventas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>VentaFácil</h1>
+        <p>Sistema de ventas · Prototipo con datos ficticios</p>
+    </header>
+    <nav><a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#clientes">Clientes</a><a
+            href="#ventas">Ventas</a></nav>
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido a VentaFácil</h2>
+            <p>Desarrollar un sistema que registre ventas, clientes y productos de forma rápida y confiable.</p>
+            <div class="cards">
+                <div class="card"><b>C$ 8,000</b>Ventas hoy</div>
+                <div class="card"><b>63</b>Productos</div>
+                <div class="card"><b>3</b>Clientes</div>
+            </div>
+        </section>
+        <section id="productos">
+            <h2>Productos</h2>
+            <table>
+                <tr>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                </tr>
+                <tr>
+                    <td>001</td>
+                    <td>Taladro</td>
+                    <td>C$ 2,500</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Martillo</td>
+                    <td>C$ 350</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Cinta métrica</td>
+                    <td>C$ 120</td>
+                    <td>40</td>
+                </tr>
+            </table>
+            <h3>Nuevo registro</h3>
+            <form onsubmit="return false"><input placeholder="Código"><input placeholder="Producto"><input
+                    placeholder="Precio"><input placeholder="Stock"><button>Guardar</button></form>
+        </section>
+        <section id="clientes">
+            <h2>Clientes</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Teléfono</th>
+                    <th>Compras</th>
+                </tr>
+                <tr>
+                    <td>C01</td>
+                    <td>Ana Pérez</td>
+                    <td>8888-1111</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>C02</td>
+                    <td>Luis Mora</td>
+                    <td>8777-2222</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>C03</td>
+                    <td>Ferretería Sol</td>
+                    <td>2222-3333</td>
+                    <td>12</td>
+                </tr>
+            </table>
+            <h3>Nuevo registro</h3>
+            <form onsubmit="return false"><input placeholder="ID"><input placeholder="Cliente"><input
+                    placeholder="Teléfono"><input placeholder="Compras"><button>Guardar</button></form>
+        </section>
+        <section id="ventas">
+            <h2>Ventas</h2>
+            <table>
+                <tr>
+                    <th>Factura</th>
+                    <th>Fecha</th>
+                    <th>Cliente</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>F-001</td>
+                    <td>2026-10-20</td>
+                    <td>Ana Pérez</td>
+                    <td>C$ 2,850</td>
+                </tr>
+                <tr>
+                    <td>F-002</td>
+                    <td>2026-10-21</td>
+                    <td>Luis Mora</td>
+                    <td>C$ 350</td>
+                </tr>
+                <tr>
+                    <td>F-003</td>
+                    <td>2026-10-22</td>
+                    <td>Ferretería Sol</td>
+                    <td>C$ 4,800</td>
+                </tr>
+            </table>
+            <h3>Nuevo registro</h3>
+            <form onsubmit="return false"><input placeholder="Factura"><input placeholder="Fecha"><input
+                    placeholder="Cliente"><input placeholder="Total"><button>Guardar</button></form>
+        </section>
+    </main>
+    <footer>Prototipo demostrativo - Ciclo de vida de un proyecto informático</footer>
+</body>
+
+</html>
