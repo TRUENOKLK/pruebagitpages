@@ -1,156 +1,308 @@
+/* Reseteo general y variables */
 * {
     box-sizing: border-box;
-    margin: 0
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    font-family: Segoe UI, Arial, sans-serif;
-    background: #f4f6f8;
-    color: #222
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
-header {
-    background: #1565c0;
-    color: #fff;
-    padding: 14px 24px
-}
-
-header h1 {
-    font-size: 1.4rem
-}
-
-header p {
-    font-size: .85rem;
-    opacity: .9
-}
-
-nav {
-    background: #222;
+/* Layout Principal con Sidebar */
+.app-container {
     display: flex;
-    flex-wrap: wrap
+    min-height: 100vh;
 }
 
-nav a {
-    color: #fff;
+/* Sidebar estilo Appointment Maker */
+.sidebar {
+    width: 220px;
+    background-color: #f1f1f1;
+    border-right: 1px solid #e0e0e0;
+    padding: 24px 0;
+    flex-shrink: 0;
+}
+
+.brand {
+    padding: 0 20px 24px 20px;
+}
+
+.brand h1 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2px;
+}
+
+.brand p {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nav-item {
+    display: block;
+    padding: 12px 20px;
+    color: #222;
     text-decoration: none;
-    padding: 12px 20px
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
 }
 
-nav a:hover {
-    background: #1565c0
+.nav-item:hover {
+    background-color: #e5e5e5;
 }
 
-main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 0 16px
-}
-
-main section {
-    display: none;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 4px #0002
-}
-
-main section:target,
-#inicio {
-    display: block
-}
-
-main:has(section:target:not(#inicio)) #inicio {
-    display: none
-}
-
-h2 {
-    color: #1565c0;
-    margin-bottom: 12px
-}
-
-.cards {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 14px
-}
-
-.card {
+/* Contenido Principal */
+.main-content {
     flex: 1;
-    min-width: 150px;
-    background: #f4f6f8;
-    border-left: 5px solid #1565c0;
-    padding: 14px;
-    border-radius: 6px
+    padding: 30px 40px;
+    background-color: #ffffff;
 }
 
-.card b {
-    font-size: 1.6rem;
-    display: block
+/* Manejo de secciones visibles con hash/target */
+.main-content section {
+    display: none;
+}
+
+.main-content section:target,
+#inicio {
+    display: block;
+}
+
+.main-content:has(section:target:not(#inicio)) #inicio {
+    display: none;
+}
+
+/* Ajustes de estado activo en el sidebar basado en el hash actual */
+body:has(#inicio:target) a[href="#inicio"],
+body:has(#productos:target) a[href="#productos"],
+body:has(#clientes:target) a[href="#clientes"],
+body:has(#ventas:target) a[href="#ventas"],
+body:not(:has(section:target)) a[href="#inicio"] {
+    background-color: #dcdcdc;
+    font-weight: 700;
+    border-left: 3px solid #666;
+}
+
+/* Encabezados de página */
+.page-header {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+}
+
+.page-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111;
+}
+
+/* Cajas contenedoras (Tarjetas estilizadas) */
+.card-box {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 24px;
+    background-color: #fff;
+}
+
+.card-box h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+/* Estilos de Sección Inicio */
+.intro-block {
+    margin-bottom: 24px;
+}
+
+.intro-block h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.links-list {
+    border-top: 1px solid #eeeeee;
+}
+
+.link-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.link-title {
+    width: 140px;
+    color: #2b546e;
+    font-weight: 700;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.summary-cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.summary-card {
+    border: 1px solid #e0e0e0;
+    padding: 16px;
+    flex: 1;
+    background-color: #fcfcfc;
+}
+
+.card-title {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2b546e;
+    margin-top: 4px;
+}
+
+/* Formulario */
+.form-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+    color: #111;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+    border-radius: 0px;
+    font-size: 0.9rem;
+    width: 100%;
+    outline: none;
+}
+
+input:focus {
+    border-color: #2b546e;
+}
+
+/* Botón primario azul oscuro estilo Appointment Maker */
+.btn-primary {
+    background-color: #2b546e;
+    color: #ffffff;
+    border: none;
+    padding: 8px 22px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #203f53;
+}
+
+/* Tablas */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 14px 0
+    font-size: 0.88rem;
 }
 
 th {
-    background: #1565c0;
-    color: #fff;
-    text-align: left
+    background-color: #eaeaea;
+    color: #111;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 12px;
+    border: 1px solid #dcdcdc;
 }
 
-th,
 td {
-    padding: 8px 10px;
-    border-bottom: 1px solid #ddd
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    color: #222;
 }
 
-tr:hover td {
-    background: #f0f4f8
+tr:nth-child(even) td {
+    background-color: #fafafa;
 }
 
-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px
-}
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
 
-input,
-select {
-    padding: 8px;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    flex: 1;
-    min-width: 140px
-}
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 16px 0;
+    }
 
-button {
-    background: #1565c0;
-    color: #fff;
-    border: 0;
-    padding: 9px 18px;
-    border-radius: 4px;
-    cursor: pointer
-}
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
-button:hover {
-    opacity: .85
-}
-
-footer {
-    text-align: center;
-    padding: 16px;
-    font-size: .8rem;
-    color: #666
-}
-
-@media(max-width:600px) {
-    nav a {
+    .nav-item {
         flex: 1;
         text-align: center;
-        padding: 10px
+        padding: 8px 12px;
+    }
+
+    .main-content {
+        padding: 20px 16px;
+    }
+
+    .form-grid {
+        flex-direction: column;
     }
 }
